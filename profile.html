@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head lang="en">
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link href='//fonts.googleapis.com/css?family=Spartan:300,400' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Bebas+Neue:300,400' rel='stylesheet' type='text/css'>  
+  <link href="style/agldwg.css" rel="stylesheet" type="text/css">
+  <title>ValPub Profile</title>
+</head>
+<body>
+  <div class="header" style="grid-column:1;"></div>
+  <div id="header" class="header" style="grid-column:2; display:grid; grid-template-columns:180px auto; grid-template-rows:50% 50%;">
+    <div id="logo" style="grid-column:1; grid-row:1/3">
+      <a href="https://www.linked.data.gov.au">
+        <img alt="AGLDWG Logo" style="width:150px; margin-top:10px" src="style/agldwg-logo-ochre-150.png" /></a>
+    </div>
+  </div><!-- #header -->
+  <div class="header" style="grid-column:3;"></div>
+  <div id="content" style="grid-column:2;">
+    <h1>ValPub Profile</h1>
+    <section id="metadata">
+      <dl>
+        <dt>URI</dt>
+        <dd><code><a href="https://w3id.org/profile/valpub">https://w3id.org/profile/valpub</a></code></dd>
+        <dt>Title</dt>
+        <dd>Ontology Publication Profile of OWL, RDFS, schema.org, SKOS and SHACL (ValPub)</dd>
+        <dt>Is Profile of</dt>
+        <dd>
+          <a href="https://www.w3.org/TR/shacl12-core/">SHACL</a>
+        </dd>
+        <dt>Definition</dt>
+        <dd>
+          <p>This is a profile of the <a href="http://www.w3.org/TR/owl-rdf-based-semantics">OWL</a>, <a href="https://www.w3.org/TR/rdf-schema/">RDFS</a>, <a href="https://schema.org">schema.org</a>, <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> and <a href="https://www.w3.org/TR/shacl12-core/">SHACL</a> ontologies used to define and annotate collections of SHACL Shapes presented in ontologies. It supplies requirements, defines testable rules and some other supporting resources for its use.</p>
+          <p>This profile is formulated according to the <a href="https://www.w3.org/TR/dx-prof/">Profiles Vocabulary</a>.</p>
+        </dd>
+        <dt>Created</dt>
+        <dd>2026-01-15</dd>
+        <dt>Modified</dt>
+        <dd>2026-03-04</dd>
+        <dt>Creator</dt>
+        <dd><a href="https://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a></dd>
+        <dt>Publisher</dt>
+        <dd><a href="https://linked.data.gov.au/org/agldwg">Australian Government Linked Data Working Group</a></dd>
+        <dt>Repository</dt>
+        <dd><a href="https://github.com/agldwg/valpub-profile">https://github.com//validatoraustralia/valpub-profile</a></dd>
+        <dt><a href="https://w3c.github.io/dx-prof/prof/#Property:hasResource">Profile Resources</a></dt>
+        <dd>
+          <ol>
+            <li><a href="#https://w3id.org/profile/valpub/spec">Specification</a></li>
+            <li><a href="#https://w3id.org/profile/valpub/validator">Validator</a></li>
+            <li><a href="#https://w3id.org/profile/vocpub/htv">How to validate instructions</a></li>
+            <li><a href="#https://w3id.org/profile/valpub/repo">Profile code repository</a></li>
+          </ol>
+        </dd>
+      </dl>
+    </section>
+    <section id="resources">
+      <h2>Profile Resources</h2>
+      <p>This profile contains the following <code>prof:Resource</code> instances:</p>
+      <table class="props" id="https://w3id.org/profile/valpub/spec">
+        <tr>
+          <td colspan="2"><h3>1. Specification Document</h3></td>
+        </tr>
+        <tr>
+          <th>Description</th><td>The normative, human-readable, listing of profile requirements</td>
+        </tr>           
+        <tr>
+          <th>Artifact</th><td><a href="https://w3id.org/profile/valpub/spec">https://w3id.org/profile/valpub/spec</a></td>
+        </tr>
+        <tr>
+          <th>Role</th><td><code><a href="http://www.w3.org/ns/dx/prof/role/specification">role:specification</a></code></td>
+        </tr>
+        <tr>
+          <th>Conforms</th><td><a href="https://www.w3.org/TR/html52/">HTML 5.2</a></td>
+        </tr>
+        <tr>
+          <th>Format</th><td><code><a href="https://w3id.org/mediatype/text/html">text/html</a></code></td>
+        </tr>
+      </table>
+      <table class="props" id="https://w3id.org/profile/valpub/validator">
+        <tr>
+          <td colspan="2"><h3>2. Validator in SHACL</h3></td>
+        </tr>
+        <tr>
+          <th>Description</th><td>A SHACL Shapes file to be used to test the conformance of RDF data to this profile</td>
+        </tr>
+        <tr>
+          <th>Artifact</th><td><a href="https://w3id.org/profile/valpub/validator">https://w3id.org/profile/valpub/validator</a></td>
+        </tr>
+        <tr>
+          <th>Role</th><td><code><a href="http://www.w3.org/ns/dx/prof/role/validation">role:validation</a></code></td>
+        </tr>
+        <tr>
+          <th>Conforms</th><td><a href="https://www.w3.org/TR/shacl/">SHACL</a></td>
+        </tr>
+        <tr>
+          <th>Format</th><td><code><a href="https://w3id.org/mediatype/text/turtle">text/turtle</a></code></td>
+        </tr>
+      </table>       
+      <table class="props" id="https://w3id.org/profile/valpub/htv">
+        <tr>
+          <td colspan="2"><h3>3. How to Validate instructions</h3></td>
+        </tr>
+        <tr>
+          <th>Description</th><td>Written instructions on how to use the VocPub profile's validator on data which applies to this profile too</td>
+        </tr>
+        <tr>
+          <th>Artifact</th><td><a href="https://w3id.org/profile/valpub/htv">https://w3id.org/profile/valpub/htv</a></td>
+        </tr>
+        <tr>
+          <th>Role</th><td><code><a href="http://www.w3.org/ns/dx/prof/role/guidance">role:guidance</a></code></td>
+        </tr>
+        <tr>
+          <th>Format</th><td><code><a href="https://w3id.org/mediatype/text/html">text/html</a></code></td>
+        </tr>
+      </table>     
+      <table class="props" id="https://w3id.org/profile/valpub/repo">
+        <tr>
+          <td colspan="2"><h3>4. Profile code repository</h3></td>
+        </tr>
+        <tr>
+          <th>Description</th><td>Code repository storing all Profile artifacts</td>
+        </tr>        
+        <tr>
+          <th>Artifact</th><td><a href="https://w3id.org/profile/valpub/repo">https://w3id.org/profile/valpub/repo</a></td>
+        </tr>
+        <tr>
+          <th>Role</th><td><code><a href="http://www.w3.org/ns/dx/prof/role/repository">role:repository</a></code></td>
+        </tr>
+      </table>
+    </section>    
+    <p>&nbsp;</p>
+  </div><!-- #content -->
+  <div class="footer" style="grid-column:1;"></div>
+  <div class="footer" style="grid-column:2; display:grid; grid-template-rows:70% 30%;">
+    <div style="grid-column:1;">
+      This web page content is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+    </div>
+    <div style="grid-column:2;">
+      <div style="float:right;">
+      </div>
+    </div>
+  </div><!-- #footer -->
+  <div class="footer" style="grid-column:3;"></div>
+</body>
+</html>
