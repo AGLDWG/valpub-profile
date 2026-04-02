@@ -138,7 +138,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         [
             a sh:PropertyShape ;
             rdfs:isDefinedBy ont: ;
-            sh:message "Requirement 2.1.16: All owl:Class, rdfs:Property and specialised OWL property types, owl:NamedIndividual and owl:Axiom instances MUST indicate the ontology that defines then with the rdfs:isDefinedBy property." ;
+            sh:message "Requirement 2.1.16: All owl:Class, rdfs:Property and specialised OWL property types, owl:NamedIndividual and owl:Axiom instances MUST indicate the ontology that defines them with the rdfs:isDefinedBy property." ;
             sh:minCount 1 ;
             sh:nodeKind sh:IRI ;
             sh:path rdfs:isDefinedBy ;
