@@ -203,7 +203,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 <https://linked.data.gov.au/def/ontpub/req/2.1.5>
     a sh:NodeShape ;
     rdfs:isDefinedBy ont: ;
-    sh:message "Requirement 2.1.4 Each ontology MUST have exactly one definition, a text literal text, indicated using either the skos:definition or schema:description property" ;
+    sh:message "Requirement 2.1.5 Each ontology MUST have exactly one definition, a text literal text, indicated using either the skos:definition or schema:description property" ;
     sh:or (
         
         [
@@ -801,7 +801,7 @@ ont:
     schema:creator <https://orcid.org/0000-0002-8742-7730> ;
     schema:dateCreated "2026-01-15"^^xsd:date ;
     schema:dateIssued "2026-02-06"^^xsd:date ;
-    schema:dateModified "2026-03-04"^^xsd:date ;
+    schema:dateModified "2026-03-07"^^xsd:date ;
     schema:description "SHACL Shapes to validate SHACL Shapes presented within an ontology according to the Validator Publications Profile, ValPub" ;
     schema:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
     schema:name "Validator Publication Profile Validator" ;
