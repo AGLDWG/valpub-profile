@@ -247,7 +247,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sh:property 
         [
             sh:maxCount 1 ;
-            sh:message "Requirement 2.1.5 Each ontology MUST have exactly one created date, exactly one modified date and exactly one issued date indicated using the schema:dateCreated, schema:dateModified & schema:dateIssued properties respectively that must be either an xsd:date, xsd:dateTime or xsd:dateTimeStamp literal values" ;
+            sh:message "Requirement 2.1.6 Each ontology MUST have exactly one created date, exactly one modified date and exactly one issued date indicated using the schema:dateCreated, schema:dateModified & schema:dateIssued properties respectively that must be either an xsd:date, xsd:dateTime or xsd:dateTimeStamp literal values" ;
             sh:minCount 1 ;
             sh:or (
                 
@@ -267,7 +267,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "Requirement 2.1.5 Each ontology MUST have exactly one created date, exactly one modified date and exactly one issued date indicated using the schema:dateCreated, schema:dateModified & schema:dateIssued properties respectively that must be either an xsd:date, xsd:dateTime or xsd:dateTimeStamp literal values" ;
+            sh:message "Requirement 2.1.6 Each ontology MUST have exactly one created date, exactly one modified date and exactly one issued date indicated using the schema:dateCreated, schema:dateModified & schema:dateIssued properties respectively that must be either an xsd:date, xsd:dateTime or xsd:dateTimeStamp literal values" ;
             sh:minCount 1 ;
             sh:or (
                 
@@ -287,7 +287,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
         ] ,
         [
             sh:maxCount 1 ;
-            sh:message "Requirement 2.1.5 Each ontology MUST have exactly one created date, exactly one modified date and exactly one issued date indicated using the schema:dateCreated, schema:dateModified & schema:dateIssued properties respectively that must be either an xsd:date, xsd:dateTime or xsd:dateTimeStamp literal values" ;
+            sh:message "Requirement 2.1.6 Each ontology MUST have exactly one created date, exactly one modified date and exactly one issued date indicated using the schema:dateCreated, schema:dateModified & schema:dateIssued properties respectively that must be either an xsd:date, xsd:dateTime or xsd:dateTimeStamp literal values" ;
             sh:minCount 1 ;
             sh:or (
                 
