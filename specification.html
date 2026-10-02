@@ -32,7 +32,7 @@
         <dt>Issued</dt>
         <dd>2026-02-15</dd>
         <dt>Modified</dt>
-        <dd>2026-03-04</dd>
+        <dd>2026-10-02</dd>
         <dt>Creator</dt>
         <dd><a href="https://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a></dd>
         <dt>Publisher</dt>
@@ -45,6 +45,7 @@
         <dd>This validator was made to improve teh consistency of Australian ontology formulation, initially by CSIRO and then handed to the AGLDWG</dd>
         <dt>Version Info</dt>
         <dd>
+          <p>0.6 2026-10: Recommend explicit <code>sh:ShapesGraph</code> typing for validator ontologies</p>
           <p>0.5 2026-01: Initial validator, inheriting ontology rules from OntPub v1.5</p>
         </dd>
         <dt>License</dt>
@@ -89,6 +90,8 @@
         <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
         <dt>rdfs</dt>
         <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sh</dt>
+        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
       </dl>
     </section>
     <section id="intro">
@@ -129,6 +132,12 @@
         </p>
         <p class="req">
           2.1.2 Each ontology <em>MUST</em> be presented as a single <code>owl:Ontology</code> object
+        </p>
+        <p>
+          To identify an ontology of SHACL Shapes unambiguously while retaining compatibility with established OWL ontology tooling:
+        </p>
+        <p class="req">
+          2.1.2a Each ontology containing SHACL Shapes <em>SHOULD</em> also be explicitly typed as a <code>sh:ShapesGraph</code>
         </p>
         <p>
           For ease of data management:
