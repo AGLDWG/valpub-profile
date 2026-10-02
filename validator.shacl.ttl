@@ -163,9 +163,12 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
             sh:maxCount 1 ;
             sh:message "Requirement 2.1.2 Each ontology MUST be presented as a single owl:Ontology object & Requirement 2.1.3 Each ontology MUST be presented in a single file which does not contain information other than that which is directly part of the ontology and the file is considered the point-of-truth" ;
             sh:minCount 1 ;
-            sh:path rdf:type ;
+            sh:path
+                [
+                    sh:inversePath rdf:type ;
+                ] ;
         ] ;
-    sh:targetClass owl:Ontology ;
+    sh:targetNode owl:Ontology ;
 .
 
 <https://linked.data.gov.au/def/ontpub/req/2.1.4>
@@ -794,7 +797,7 @@ ont:
     owl:versionIRI :1.5 ;
     owl:versionInfo """0.5 2026-01: Initial validator, inheriting ontology rules from OntPub v1.5""" ;
     skos:historyNote "This validator was made to improve the consistency of SHACL validator formulation by Nicholas Car while a member of the W3C Data Shapes Working Group, 2026" ;
-    skos:scopeNote "This validator does NOT validate SHACL Shapes according to SHACL validity, only their metadata for publication. To validate Shapes according to SHACL's own rules, see the W3C's SHACL-SHACL validator"
+    skos:scopeNote "This validator does NOT validate SHACL Shapes according to SHACL validity, only their metadata for publication. To validate Shapes according to SHACL's own rules, see the W3C's SHACL-SHACL validator" ;
     schema:codeRepository "https://github.com/agldwg/valpub-profile"^^xsd:anyURI ;
     schema:copyrightHolder <https://linked.data.gov.au/org/agldwg> ;
     schema:copyrightYear "2026"^^xsd:gYear ;
