@@ -794,7 +794,7 @@ ont:
     owl:versionIRI :1.5 ;
     owl:versionInfo """0.5 2026-01: Initial validator, inheriting ontology rules from OntPub v1.5""" ;
     skos:historyNote "This validator was made to improve the consistency of SHACL validator formulation by Nicholas Car while a member of the W3C Data Shapes Working Group, 2026" ;
-    skos:scopeNote "This validator does NOT validate SHACL Shapes according to SHACL validity, only their metadata for publication. To validate Shapes according to SHACL's own rules, see the W3C's SHACL-SHACL validator"
+    skos:scopeNote "This validator does NOT validate SHACL Shapes according to SHACL validity, only their metadata for publication. To validate Shapes according to SHACL's own rules, see the W3C's SHACL-SHACL validator" ;
     schema:codeRepository "https://github.com/agldwg/valpub-profile"^^xsd:anyURI ;
     schema:copyrightHolder <https://linked.data.gov.au/org/agldwg> ;
     schema:copyrightYear "2026"^^xsd:gYear ;
