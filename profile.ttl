@@ -1,4 +1,4 @@
-PREFIX : <https://w3id.org/profile/ontpub/>
+PREFIX : <https://linked.data.gov.au/def/valpub/>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prof: <http://www.w3.org/ns/dx/prof/>
 PREFIX role: <http://www.w3.org/ns/dx/prof/role/>
@@ -14,49 +14,31 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
     sdo:name "Nicholas J. Car" ;
 .
 
-<https://w3id.org/profile/ontpub>
+<https://linked.data.gov.au/def/valpub>
     a prof:Profile ;
-    skos:definition """This is a profile of the OWL, RDFS, schema.org and SKOS ontologies used to define and annotate ontologies. It supplies requirements, defines testable rules and some other supporting resources for its use.\r\r
+    skos:definition """This is a profile of the OWL, RDFS, schema.org, SKOS and SHACL ontologies used to define and annotate collections of SHACL Shapes presented in ontologies. It supplies requirements, defines testable rules and some other supporting resources for its use.
 
 This profile is formulated according to the Profiles Vocabulary"""@en ;
-    skos:prefLabel "Ontology Publication Profile of OWL, RDFS, schema.org and SKOS (OntPub)"@en ;
+    skos:prefLabel "ValPub Profile"@en ;
     prof:hasResource
-        :example-01-invalid ,
-        :example-01-valid ,
+        :htv ,
         :repo ,
         :spec ,
-        :validator ,
-        <https://w3id.org/profile/vocpub/htv> ;
+        :validator ;
     prof:isProfileOf
         <http://www.w3.org/TR/owl-rdf-based-semantics> ,
         <https://schema.org> ,
         <https://www.w3.org/TR/rdf-schema/> ,
-        <https://www.w3.org/TR/skos-reference/> ;
+        <https://www.w3.org/TR/skos-reference/> ,
+        <https://www.w3.org/TR/shacl12-core/> ;
     sdo:creator <https://orcid.org/0000-0002-8742-7730> ;
-    sdo:dateCreated "2020-06-13"^^xsd:date ;
-    sdo:dateModified "2022-04-07"^^xsd:date ;
+    sdo:dateCreated "2026-01-15"^^xsd:date ;
+    sdo:dateModified "2026-11-06"^^xsd:date ;
     sdo:publisher <https://linked.data.gov.au/org/agldwg> ;
 .
 
-:example-01-invalid
-    dcterms:format "text/turtle" ;
-    prof:hasArtifact "https://w3id.org/profile/ontpub/example-01-invalid"^^xsd:anyURI ;
-    prof:hasRole role:example ;
-    sdo:description "Example RDF data invalid according to the validator. Notes on the invalid elements are given at the top of the file"@en ;
-    sdo:name "Example 01 Inalid"@en ;
-.
-
-:example-01-valid
-    dcterms:conformsTo <https://w3id.org/profile/ontpub> ;
-    dcterms:format "text/turtle" ;
-    prof:hasArtifact "https://w3id.org/profile/ontpub/example-01-valid"^^xsd:anyURI ;
-    prof:hasRole role:example ;
-    sdo:description "Example RDF data valid according to the validator"@en ;
-    sdo:name "Example 01 Valid"@en ;
-.
-
 :repo
-    prof:hasArtifact "https://w3id.org/profile/ontpub/repo"^^xsd:anyURI ;
+    prof:hasArtifact "https://github.com/AGLDWG/valpub-profile"^^xsd:anyURI ;
     prof:hasRole role:repository ;
     sdo:description "Code repository storing all Profile artifacts"@en ;
     sdo:name "Profile code repository"@en ;
@@ -65,7 +47,7 @@ This profile is formulated according to the Profiles Vocabulary"""@en ;
 :spec
     dcterms:conformsTo <https://www.w3.org/TR/html52/> ;
     dcterms:format "text/html" ;
-    prof:hasArtifact "https://w3id.org/profile/ontpub/spec"^^xsd:anyURI ;
+    prof:hasArtifact "https://linked.data.gov.au/def/valpub/spec"^^xsd:anyURI ;
     prof:hasRole role:specification ;
     sdo:description "The normative, human-readable, listing of profile requirements"@en ;
     sdo:name "Specification Document"@en ;
@@ -74,18 +56,18 @@ This profile is formulated according to the Profiles Vocabulary"""@en ;
 :validator
     dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
     dcterms:format "text/turtle" ;
-    prof:hasArtifact "https://w3id.org/profile/ontpub/validator"^^xsd:anyURI ;
+    prof:hasArtifact "https://linked.data.gov.au/def/valpub/validator"^^xsd:anyURI ;
     prof:hasRole role:validation ;
     sdo:description "A SHACL Shapes file to be used to test the conformance of RDF data to this profile"@en ;
     sdo:name "Validator in SHACL"@en ;
 .
 
-<https://w3id.org/profile/vocpub/htv>
+:htv
     dcterms:format "text/html" ;
-    prof:hasArtifact "https://w3id.org/profile/vocpub/htv"^^xsd:anyURI ;
+    prof:hasArtifact "https://linked.data.gov.au/def/valpub/htv"^^xsd:anyURI ;
     prof:hasRole role:guidance ;
-    sdo:description "Written instructions on how to use the VocPub profile's validator on data which applies to this profile too."@en ;
-    sdo:name "VocPub's How to Validate"@en ;
+    sdo:description "Written instructions on how to use the ValPub profile's validator on data."@en ;
+    sdo:name "ValPub's How to Validate"@en ;
 .
 
 <https://linked.data.gov.au/org/agldwg>
