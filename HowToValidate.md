@@ -1,9 +1,9 @@
 # ValPub Profile
 ## How to validate
 
-This document describes how you can use the validator in the [ValPub Profile](https://w3id.org/profile/valpub) to test whether data is valid according to it.
+This document describes how you can use the validator in the [ValPub Profile](https://linked.data.gov.au/def/valpub) to test whether data is valid according to it.
 
-Validation using VocPub's validator involves applying the [SHACL](https://www.w3.org/TR/shacl/) validator file, [provided in this profile](https://w3id.org/profile/valpub/validator) to data using one of many available validator tools. Different approaches and tools are:
+Validation using ValPub's validator involves applying the [SHACL](https://www.w3.org/TR/shacl/) validator file, [provided in this profile](https://linked.data.gov.au/def/valpub/validator) to data using one of many available validator tools. Different approaches and tools are:
 
 1. **Online validation**
     * [SHACL Playground](https://shacl.org/playground/)

@@ -24,7 +24,7 @@
         <dt>IRI</dt>
         <dd><code><a href="https://linked.data.gov.au/def/valpub/spec">https://linked.data.gov.au/def/valpub/spec</a></code></dd>
         <dt>Definition</dt>
-        <dd>SHACL Shapes to validate SHACL Shapes presented within an ontology according to the Validator Publications Profile, ValPub.</dd>
+        <dd>This document specifies the publication metadata requirements for collections of SHACL Shapes presented within an ontology according to the ValPub profile.</dd>
         <dt>Scope Note</dt>
         <dd>This validator does NOT validate SHACL Shapes according to SHACL validity, only their metadata for publication. To validate Shapes according to SHACL's own rules, see the W3C's SHACL-SHACL validator.</dd>
         <dt>Created</dt>
@@ -32,7 +32,7 @@
         <dt>Issued</dt>
         <dd>2026-02-15</dd>
         <dt>Modified</dt>
-        <dd>2026-10-02</dd>
+        <dd>2026-11-06</dd>
         <dt>Creator</dt>
         <dd><a href="https://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a></dd>
         <dt>Publisher</dt>
@@ -42,7 +42,7 @@
         <dt>Code Repository</dt>
         <dd><a href="https://github.com/agldwg/valpub-profile">https://github.com/agldwg/valpub-profile</a></dd>
         <dt>History Note</dt>
-        <dd>This validator was made to improve teh consistency of Australian ontology formulation, initially by CSIRO and then handed to the AGLDWG</dd>
+        <dd>This validator was made to improve the consistency of Australian ontology formulation, initially by CSIRO and then handed to the AGLDWG</dd>
         <dt>Version Info</dt>
         <dd>
           <p>0.6 2026-10: Recommend explicit <code>sh:ShapesGraph</code> typing for validator ontologies</p>
@@ -90,8 +90,10 @@
         <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
         <dt>rdfs</dt>
         <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
-        <dt>sh</dt>
-        <dd><code>http://www.w3.org/ns/shacl#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
       </dl>
     </section>
     <section id="intro">
@@ -106,7 +108,7 @@
       </p>
       <p>
         Standard cataloguing metadata is required of the ontology, as per models such as <a href="https://www.w3.org/TR/vocab-dcat-3/">DCAT</a>
-        and the requirements of Shapes is as per the SHACL 1.2 Profiling specification's <a href="https://www.w3.org/TR/shacl12-profiling/#packaging">Packaging SHACL</a> section.
+        and the requirements for Shapes are as set out in the SHACL 1.2 Profiling specification's <a href="https://www.w3.org/TR/shacl12-profiling/#packaging">Packaging SHACL</a> section.
       </p>
       <p class="note">
         This validator does NOT validate SHACL Shapes according to SHACL validity, only their metadata for publication. To validate Shapes according to SHACL's own rules, see the W3C's SHACL-SHACL validator
@@ -120,15 +122,15 @@
           The AGLDWG identifies Semantic Web objects with IRI-based persistent identifiers. For this reason:
         </p>
         <p class="req">
-          2.1.1 Each ontology <em>MUST</em> be identified by a IRI
+          2.1.1 Each ontology <em>MUST</em> be identified by an IRI
         </p>
         <p>
-          As per the <em>OWL 2 Primer</em><sup><a href="#owl-primer">ref</a></sup>, a document guiding the use of OWL:
+          As per the <em>OWL 2 Primer</em><sup><a href="#owl2-primer">ref</a></sup>, a document guiding the use of OWL:
         </p>
         <p class="quote">OWL 2 ontologies provide classes, properties, individuals, and data values and are stored as Semantic Web documents</p>
         <p>Additionally, OWL ontologies are indicated with the OWL class <code>owl:Ontology</code>.</p>
         <p>
-          To avoid unnecissary complexity, this profile requires that:
+          To avoid unnecessary complexity, this profile requires that:
         </p>
         <p class="req">
           2.1.2 Each ontology <em>MUST</em> be presented as a single <code>owl:Ontology</code> object
@@ -146,31 +148,31 @@
           2.1.3 Each ontology <em>MUST</em> be presented in a single file which does not contain information other than that which is directly part of the ontology and the file is considered the point-of-truth
         </p>
         <p>
-          To ensure ontology can be catalogued effectively and governed:
+          To ensure each ontology can be catalogued effectively and governed:
         </p>
         <p class="req">
-          2.1.4 Each ontology <em>MUST</em> have exactly one title indicated using either the <code>skos:prefLabel</code> or <code>sdo:name</code> property that must be a text literal value
+          2.1.4 Each ontology <em>MUST</em> have exactly one title indicated using either the <code>skos:prefLabel</code> or <code>sdo:name</code> property that must be an <code>xsd:string</code> or <code>rdf:langString</code> literal value
         </p>
         <p class="req">
-          2.1.5 Each ontology <em>MUST</em> have exactly one definition value indicated using either the <code>skos:definition</code> or <code>sdo:description</code> property that must be a text literal values
+          2.1.5 Each ontology <em>MUST</em> have exactly one definition value indicated using either the <code>skos:definition</code> or <code>sdo:description</code> property that must be a text literal value
         </p>
         <p class="req">
-          2.1.6 Each ontology <em>MUST</em> have exactly one created, exactly one modified and exactly one issued date indicated using the <code>sdo:dateCreated</code>, <code>sdo:dateModified</code> &amp; <code>sdo:dateIssued</code> properties respectively that must be either xsd:date, xsd:dateTime or xsd:dateTimeStamp literal values
+          2.1.6 Each ontology <em>MUST</em> have exactly one created date and exactly one modified date indicated using the <code>sdo:dateCreated</code> and <code>sdo:dateModified</code> properties respectively, with <code>xsd:date</code>, <code>xsd:dateTime</code>, <code>xsd:dateTimeStamp</code> or <code>xsd:gYearMonth</code> literal values. Each ontology <em>MUST</em> have exactly one issued date indicated using <code>sdo:dateIssued</code> with an <code>xsd:date</code>, <code>xsd:dateTime</code> or <code>xsd:dateTimeStamp</code> literal value.
         </p>      
         <p class="req">
           2.1.7 Each ontology <em>MUST</em> have at least one creator, indicated using <code>sdo:creator</code> and at least one <code>sdo:publisher</code> property that must be IRI values indicating agents, that is instances of <code>sdo:Person</code>, <code>sdo:Organization</code> or a subclass of either
         </p>
         <p class="req">
-          2.1.8 Each ontology <em>MAY</em> have at least any number of contributors, indicated using <code>sdo:contributor</code> property that must be a IRI value indicating an agent, that is an instance of <code>sdo:Person</code>, <code>sdo:Organization</code> or a subclass of either
+          2.1.8 Each ontology <em>MAY</em> have any number of contributors, indicated using the <code>sdo:contributor</code> property that must be an IRI value indicating an agent, that is an instance of <code>sdo:Person</code>, <code>sdo:Organization</code> or a subclass of either
         </p>        
         <p>
           To be able to link ontologies to their non-ontology source information:
         </p>
         <p class="req">
-          2.1.9 Provenance for an <code>owl:Ontology</code> <em>MUST</em> be indicated by at least one of the following properties: <code>sos:historyNote</code>, <code>dcterms:source</code> or <code>prov:wasDerivedFrom</code>.
+          2.1.9 Provenance for an <code>owl:Ontology</code> <em>MUST</em> be indicated by at least one of the following properties: <code>skos:historyNote</code>, <code>dcterms:source</code> or <code>prov:wasDerivedFrom</code>.
         </p>
         <p>
-          If an ontology is based on another Semantic Web resource, such as an ontology or a vocabulary, <code>prov:wasDerivedFrom</code> should be used to indicate that resource's IRI. If the ontology is based on a resource that is identified by a IRI but which is not a Semantic Web resource, <code>dcterms:source</code> should be used to indicate the resource's IRI. If the ontology is based on something which cannot be identified by IRI, a statement about the thing should be given in a literal value indicated with the <code>sos:historyNote</code> property. If the ontology is not based on any other resource or source of information, i.e. this ontology is its only expression, this should be communicated by use of the <code>sos:historyNote</code> indicating the phrase "This ontology is expressed for the first time here".
+          If an ontology is based on another Semantic Web resource, such as an ontology or a vocabulary, <code>prov:wasDerivedFrom</code> should be used to indicate that resource's IRI. If the ontology is based on a resource that is identified by an IRI but which is not a Semantic Web resource, <code>dcterms:source</code> should be used to indicate the resource's IRI. If the ontology is based on something which cannot be identified by IRI, a statement about the thing should be given in a literal value indicated with the <code>skos:historyNote</code> property. If the ontology is not based on any other resource or source of information, i.e. this ontology is its only expression, this should be communicated by use of the <code>skos:historyNote</code> indicating the phrase "This ontology is expressed for the first time here".
         </p>
         <p>To keep track of versions:</p>
         <p class="req">
@@ -180,10 +182,10 @@
         </p>
         <p>To assist users locating additional online resources:</p>
         <p class="req">
-          2.1.11 OWL ontologies <em>SHOULD</em> indicate any online version controlled source code repository storing the ontology and related content with the <code>sdo:codeRespository</code> with a <code>xsd:anyURI</code> object.
+          2.1.11 OWL ontologies <em>SHOULD</em> indicate any online version controlled source code repository storing the ontology and related content using the <code>sdo:codeRepository</code> property with an <code>xsd:anyURI</code> object.
         </p>
         <p>
-          NOTE: the property <code>xsd:anyURI</code> is used instead of an IRI when the object in a triple is a web resource or web address but not expected to be an RDF node in a graph, as will be the case for non-RDF resources such as code repository locations.</p>
+          NOTE: the datatype <code>xsd:anyURI</code> is used instead of an IRI when the object in a triple is a web resource or web address but not expected to be an RDF node in a graph, as will be the case for non-RDF resources such as code repository locations.</p>
         <p>
           To ensure that permissions and obligations of use are understood:
         </p>
@@ -191,10 +193,10 @@
           2.1.12 Ontologies <em>SHOULD</em> present a license for its use indicated with the <code>sdo:license</code> predicate preferentially indicating the IRI of a license, if in RDF form, or a literal URL (datatype <code>xsd:anyURI</code>) if online but not in RDF form or as literal text (xsd:string) if the license is neither in RDF form nor online
         </p>
         <p class="req">
-          2.1.13 Ontologies <em>MAY</em> present usage information alongside license information using the <code>sdo:usageInfo</code> property indicating either the literal text.
+          2.1.13 Ontologies <em>MAY</em> present usage information alongside license information using the <code>sdo:usageInfo</code> property indicating literal text.
         </p>        
         <p class="req">
-          2.1.14 Ontologies <em>SHOULD</em> present a rights holding information for it indicated with properties <code>sdo:copyrightHolder</code>, <code>sdo:copyrightNotice</code> and <code>sdo:copyrightYear</code>. <code>sdo:copyrightHolder</code> may be used with a text object or, preferrably, an <code>sdo:Person</code> or <code>sdo:Organization</code> object.
+          2.1.14 Ontologies <em>SHOULD</em> present rights-holding information indicated with properties <code>sdo:copyrightHolder</code>, <code>sdo:copyrightNotice</code> and <code>sdo:copyrightYear</code>. <code>sdo:copyrightHolder</code> may be used with a text object or, preferably, an <code>sdo:Person</code> or <code>sdo:Organization</code> object.
         </p>
         <p>
           To ensure non-trivial ontologies:
@@ -206,7 +208,7 @@
           To ensure that all the elements within this ontology are linked to an ontology object:
         </p>
         <p class="req">
-          2.1.16 All <code>owl:Class</code>, <code>rdfs:Property</code> and specailised OWL property types, <code>owl:NamedIndividual</code> and <code>owl:Axiom</code> instances <em>MUST</em> indicate the ontology that defines then with the <code>rdfs:isDefinedBy</code> property.
+          2.1.16 All <code>owl:Class</code>, <code>rdfs:Property</code> and specialised OWL property types, <code>owl:NamedIndividual</code> and <code>owl:Axiom</code> instances <em>MUST</em> indicate the ontology that defines them with the <code>rdfs:isDefinedBy</code> property.
         </p>
         <p><strong>NOTE</strong>: not all of the ontology elements used within <em>this</em> ontology need be defined by it: it is expected that ontologies will reuse elements from other ontologies and, when they do, the elements reused should indicate their original defining ontology with the <code>rdfs:isDefinedBy</code> property.</p>
       </section>
@@ -219,9 +221,9 @@
           To ensure that each element is identifiable and their meaning isn't obscure or lost:
         </p>
         <p class="req">
-          2.2.1 Each element instance <em>MUST</em> have at least one title indicated using either the <code>skos:prefLabel</code> or <code>sdo:name</code> property that must be a language-typed text literal value. Only one value per language is allowed.
+          2.2.1 Each element instance <em>MUST</em> have at least one title indicated using either the <code>skos:prefLabel</code> or <code>sdo:name</code> property that must be an <code>xsd:string</code> or <code>rdf:langString</code> literal value. Only one value per language is allowed if language tags are used.
         </p>
-        <p>NOTE: the use of <code>skos:prefLabel</code> is preferred over the use of <code>rdfs:label</code> or <code>dcterms:title</code> or similar as it is clear that the property indicates the class' primary label and thus secondary labels are explicitly provisioned for with <code>skos:altLabel</code>, however <code>sdo:description</code> is also permitted to facilitate use of the <code>schema.org</code> namespace only.</p>
+        <p>NOTE: the use of <code>skos:prefLabel</code> is preferred over the use of <code>rdfs:label</code> or <code>dcterms:title</code> or similar as it is clear that the property indicates the class' primary label and thus secondary labels are explicitly provisioned for with <code>skos:altLabel</code>, however <code>sdo:name</code> is also permitted to facilitate use of the <code>schema.org</code> namespace only.</p>
         <p class="req">
           2.2.2 Each element instance <em>MUST</em> have at least one definition indicated using the <code>skos:definition</code> or <code>sdo:description</code> property that must be a language-typed text literal value. Only one value per language is allowed.
         </p>
@@ -230,7 +232,7 @@
           To preserve derivation lineage:
         </p>
         <p class="req">
-          2.2.3 Provenance for a element, if different from that of the <code>owl:Ontology</code> being validated, <em>SHOULD</em> be indicated by at least one of the following properties: <code>sos:historyNote</code>, <code>dcterms:source</code> or <code>prov:wasDerivedFrom</code>.
+          2.2.3 Provenance for an element, if different from that of the <code>owl:Ontology</code> being validated, <em>SHOULD</em> be indicated by at least one of the following properties: <code>skos:historyNote</code>, <code>dcterms:source</code> or <code>prov:wasDerivedFrom</code>.
         </p>
         <p>
           To assist with understanding of how to use classes:
@@ -261,14 +263,14 @@
         <h3>2.5 Named Individual</h3>
         <p>To keep with OWL ontology notational convention:</p>
         <p class="req">
-          2.5.1 Each <code>owl:NamedIndividual</code> instance's IRI's unique element <em>SHOULD</em> be presented in lowercase-leading CamelCase, e.g. for a Named Individual called Julius Ceasar, <code>juliusCeasar</code>, not <code>JuliusCeasar</code> or <code>juliusceasar</code>
+          2.5.1 Each <code>owl:NamedIndividual</code> instance's IRI's unique element <em>SHOULD</em> be presented in lowercase-leading CamelCase, e.g. for a Named Individual called Julius Caesar, <code>juliusCaesar</code>, not <code>JuliusCaesar</code> or <code>juliuscaesar</code>
         </p>
       </section>
       <section id="axiom">
         <h3>2.6 Axiom</h3>
         <p>To keep with OWL ontology notational convention:</p>
         <p class="req">
-          2.6.1 Each <code>owl:Axiom</code> instance, if identified with an IRI, <em>SHOULD</em> have that IRI's unique element presented in uppercase-leading CamelCase and in the singular form, e.g. for an axiom indicating that a Man s a Person, <code>ManIsAPerson</code>, not <code>manIsAPerson</code> or <code>manisaperson</code> or <code>man-is-a-person</code>.
+          2.6.1 Each <code>owl:Axiom</code> instance, if identified with an IRI, <em>SHOULD</em> have that IRI's unique element presented in uppercase-leading CamelCase and in the singular form, e.g. for an axiom indicating that a Man is a Person, <code>ManIsAPerson</code>, not <code>manIsAPerson</code> or <code>manisaperson</code> or <code>man-is-a-person</code>.
         </p>          
       </section>       
       <section id="agent">
@@ -296,14 +298,14 @@
           2.7.4 One agent <em>MAY</em> be affiliated with another using schema.org agent/agent linking properties, such as <code>sdo:affiliation</code> between persons and organisations or <code>sdo:parentOrganization</code> and similar between organizations.
         </p>       
         <p class="req">
-          2.7.5 Other schema.org Agent properties, such as <code>sdo:honorificPrefix</code> and so on many be used for additional agent information        
+          2.7.5 Other schema.org Agent properties, such as <code>sdo:honorificPrefix</code> and so on may be used for additional agent information
         </p>      
       </section>
     </section>
   <section id="references">
     <h2>3. References</h2>
     <dl>
-      <dt><a id="prof"></a>PROV</dt>
+      <dt><a id="prof"></a>PROF</dt>
       <dd>
         Rob Atkinson; Nicholas J. Car (eds.). <em>The Profiles Vocabulary</em>. 18 December 2019. W3C Working Group Note. URL: <a href="https://www.w3.org/TR/dx-prof/">https://www.w3.org/TR/dx-prof/</a>
       </dd>
@@ -325,7 +327,7 @@
   <div class="footer" style="grid-column:1;"></div>
   <div class="footer" style="grid-column:2; display:grid; grid-column:70% 30%;">
     <div style="grid-column:1;">
-      This web page content is licensed under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
+      This web page content is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
     </div>
     <div style="grid-column:2;">
       <div style="float:right;">
